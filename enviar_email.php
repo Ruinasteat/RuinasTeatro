@@ -16,16 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Monta o corpo da mensagem
     $corpo_mensagem = "Nome: $nome\n";
     $corpo_mensagem .= "Email: $email\n";
-    $corpo_mensagem .= "Telefone: $Telefone\n";
+    $corpo_mensagem .= "Telefone: $telefone\n";
     $corpo_mensagem .= "Mensagem:\n$mensagem";
 
     // Envia o e-mail
     if (mail($destinatario, $assunto, $corpo_mensagem)) {
         // Se o e-mail foi enviado com sucesso, redireciona de volta para o formulário com uma mensagem de sucesso
-        header('Location: formulario_contato.html?enviado=sucesso');
+        echo '<script>alert("E-mail enviado com sucesso!");</script>';
     } else {
-        // Se houve um erro no envio do e-mail, redireciona de volta para o formulário com uma mensagem de erro
-        header('Location: formulario_contato.html?enviado=erro');
+        echo '<script>alert("Houve um erro ao enviar o e-mail. Por favor, tente novamente mais tarde.");</script>';
     }
 } else {
     // Se o formulário não foi submetido, redireciona de volta para o formulário
