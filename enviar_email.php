@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem = $_POST['Mensagem'];
 
     // Endereço de e-mail para onde você deseja enviar a mensagem
-    $destinatario = 'teatroruinas@gmail.com';
+    $destinatario = 'vjpp29@gmail.com';
 
     // Assunto do e-mail
     $assunto = 'Nova mensagem do formulário de contato';
